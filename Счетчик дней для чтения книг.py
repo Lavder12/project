@@ -3,7 +3,7 @@ from tkinter import messagebox
 
 window = Tk()
 window.title("Длительность чтения книг")
-window.geometry("500x500")
+window.geometry("1280x720")
 
 frame = Frame(
     window,
@@ -18,7 +18,7 @@ kol_str.grid(row=3, column=1)
 
 kol_str_den = Label(
     frame,
-    text="Сколько вы хотите читать в день ")
+    text="Сколько страниц в день вы хотите читать ")
 kol_str_den.grid(row=5, column=1)
 
 kol_str_tf = Entry(
@@ -39,9 +39,9 @@ def result_time():
     str_day = int(kol_str_den_tf.get())
     days = int(page / str_day)
     if page == 0 or page < 0:
-        messagebox.showinfo('Результат', f'Ошибка,{page} не соответсвует введенныи данных')
+        messagebox.showinfo('Результат', f'Ошибка, {page} не соответсвует допустимому количеству страниц')
     else:
-        messagebox.showinfo('bmi-pythonguides', f'Вам понадобится{days} дней ')
+        messagebox.showinfo('Правильный результат', f'Вам понадобится {days} дней ')
 
 res_btn = Button(
    frame,
